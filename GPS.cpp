@@ -4,11 +4,11 @@
 #include "ui_gps.h"
 #endif
 
-GPS::GPS(Logger *log, QWidget *parent): QWidget(parent),
+GPS::GPS(Logger *log, QWidget *parent): QWidget(parent)
 #ifdef GPS_LOADABLE
-ui(new Ui::GPS),
+,ui(new Ui::GPS)
 #endif
-log(log), settings(new QSettings("carpi", "gps"))
+,log(log), settings(new QSettings("carpi", "gps"))
 {
 #ifdef GPS_LOADABLE
     ui->setupUi(this);
